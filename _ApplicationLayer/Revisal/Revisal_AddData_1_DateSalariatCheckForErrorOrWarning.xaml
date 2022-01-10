@@ -144,7 +144,7 @@
                     </ui:GetValue.Value>
                   </ui:GetValue>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[strEroare]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign DisplayName="Set status to Status" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[io_InputDict("Status")]</OutArgument>
                     </Assign.To>
@@ -152,7 +152,7 @@
                       <InArgument x:TypeArguments="x:String">Failed</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign DisplayName="Assign error to details" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[io_InputDict("Details")]</OutArgument>
                     </Assign.To>
@@ -160,7 +160,7 @@
                       <InArgument x:TypeArguments="x:String">[strEroare]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Throw Exception="[new BusinessRuleException(strEroare)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw DisplayName="Throw Buisness Rule Exception" Exception="[new BusinessRuleException(strEroare)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -208,8 +208,8 @@
                       <OutArgument x:TypeArguments="x:String">[strWarning]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[strWarning]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <ui:LogMessage DisplayName="Log Message found warning" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[strWarning]" />
+                  <Assign DisplayName="Assign warning to details" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[io_InputDict("Details")]</OutArgument>
                     </Assign.To>
